@@ -1,0 +1,120 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Postre</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="static/sPostre.css">
+    <link href="https://db.onlinewebfonts.com/c/e552a73b2627d8afebb6bc486014dd9b?family=Adlery+Pro+Swash" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+  </head>
+
+  <body>
+    
+    <nav>
+      <ul class="itemsNav">
+        <li class="itemName"><a href="{{ url_for('home') }}">DessertMaker</a></li>
+        <div class="itemsRightNav">
+          <li><a class="itemRightNav" href="{{ url_for('home') }}">INICIO</a></li>
+          <li><a class="itemRightNav" href="{{ url_for('ingredientes') }}">¡BUSCA TU RECETA!</a></li>
+        </div>
+      </ul>
+    </nav>
+
+    <div class="texto">
+      <p class="contenedor1">Teniendo en cuenta tus ingredientes, el postre más adecuado es:</p>
+
+      <h1 class="contenedor2">{{postreExtraido}}</h1>
+
+      <div class="contenedor3">
+          {% if postreExtraido == "Pancakes de vainilla" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/PancakesdeVainilla.jpeg') }}">
+          {% elif postreExtraido == "Pancakes de avena" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/PancakesdeAvena.jpg') }}">
+          {% elif postreExtraido == "Waffles de vainilla" %}
+              <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/WafflesdeVainilla.jpeg') }}">
+          {% elif postreExtraido == "Queque de vainilla" %}
+              <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/QuequedeVainilla.jpeg') }}">
+          {% elif postreExtraido == "Pancakes de plátano" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/PancakesdePlatano.jpg') }}">
+          {% elif postreExtraido == "Queque de plátano" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/QuequedePlatano.jpg') }}">
+          {% elif postreExtraido == "Queque de zanahoria" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/QuequedeZanahoria.jpg') }}">
+          {% elif postreExtraido == "Pie de manzana" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/PiedeManzana.png') }}">
+          {% elif postreExtraido == "Arroz con leche" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/ArrozconLeche.jpg') }}">
+          {% elif postreExtraido == "Mazamorra morada" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/MazamorraMorada.png') }}">
+          {% elif postreExtraido == "Picarones" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/Picarones.jpg') }}">
+          {% elif postreExtraido == "Queque de chocolate" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/QuequedeChocolate.jpeg') }}">
+          {% elif postreExtraido == "Muffins de arándanos" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/MuffinsdeArandanos.jpg') }}">
+          {% elif postreExtraido == "Pie de limón" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/PiedeLimon.png') }}">
+          {% elif postreExtraido == "Pie de piña" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/PiedePiña.jpg') }}">
+          {% elif postreExtraido == "Galletas con chispas de chocolate" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/GalletadeChocolate.jpeg') }}">
+          {% elif postreExtraido == "Galletas de avena" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/GalletasdeAvena.jpg') }}">
+          {% elif postreExtraido == "Brownies" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/Brownies.png') }}">
+          {% elif postreExtraido == "Flan" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/Flan.jpg') }}">
+          {% elif postreExtraido == "Cheesecake" %}
+             <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/Cheesecake.jpg') }}">      {% elif postreExtraido == "Budín" %}
+            <img class="imagenResultado" src="{{ url_for('serve_static', filename='images/Budin.jpg') }}">
+          {%endif%}
+      </div>
+
+      <div class="contenedor4">
+        <h2>INGREDIENTES QUE TIENES</h2>
+        <ul>
+          {%for ingrediente in interseccion_ingredientes%}
+           <li>{{ingrediente}}</li>
+          {%endfor%}
+        </ul>
+      </div>
+
+      <div class="contenedor5">
+        <h2>CANTIDADES FALTANTES</h2>
+        <ul>
+          {%for ingrediente in ingrediente_cantidadFaltante%}
+            <li>{{ingrediente}}: {{ingrediente_cantidadFaltante[ingrediente]}}</li>
+          {%endfor%}
+        </ul>
+      </div>
+
+      <div class="contenedor6">
+        <h2>INGREDIENTES POR ADQUIRIR</h2>
+        <ul>         
+          {%for ingrediente in diferencia_ingredientes%}
+           <li>{{ingrediente}}</li>
+          {%endfor%}
+        </ul>
+      </div>
+    </div>
+      <div class="contenedor7"> 
+    
+        <img id="contenedorQueque" class="postreImagen" src="{{ url_for('serve_static', filename=  'images/QUEQUEVAINILLA.png') }}">
+          
+        <img id="contenedorMazamorra" class="postreImagen" src="{{ url_for('serve_static', filename='images/MAZAMORRA.png') }}">
+        
+      </div>
+
+
+
+
+
+      
+
+      
+
+      
+    </div>
+    
+  </body>
+</html>

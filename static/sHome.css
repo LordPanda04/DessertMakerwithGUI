@@ -1,0 +1,90 @@
+body{
+background-image: url("images/BACKGROUND.png"); 
+}
+
+.contenedor1{
+  display: flex;
+  justify-content: space-between;
+}
+
+.slogan{
+  text-align: center;
+  justify-content: center;
+  font-size: 45px;
+  font-family: 'Suez One';
+  margin:0
+}
+.sloganBotton{
+  font-size: 35px;
+}
+.sloganContenedor{
+  margin-bottom: 80px;
+}
+.sloganTop{
+  padding-top:70px;
+}
+.descripcion{	
+  font-size: 25px;
+
+}/*  */
+#pancake{
+  margin-top:260px;
+}
+#brownie{
+  height:621px;
+}
+.textoContenedor1{	
+  margin-top: 110px;
+}
+
+.tituloMision{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.contenedor2{
+  display:grid;
+  grid-template-columns: 1fr 3fr 1fr;
+}
+
+.contenedorRectangulo{
+  background-color:rgba(206, 165, 136, 0.54);
+}
+
+
+.contenedorMision{
+  margin-left:80px;
+  margin-right:80px;
+  background-color:white;
+  border: 2px solid #000;
+  padding-bottom:50px;
+  padding-top:50px;
+}
+
+.intSigno{
+  line-height: 180px;
+}
+
+#signoDer{
+  text-align: left;
+}
+#signoIzq{
+  text-align: right;
+}
+
+.contenedor3{
+  display: flex;
+  justify-content: space-between;  
+}
+img.contenedor3 {
+  align-self: flex-end;
+}
+
+
+
+.textoMision{
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20%;
+  box-sizing: border-box;
+}

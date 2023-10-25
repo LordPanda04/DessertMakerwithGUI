@@ -1,0 +1,106 @@
+@import url('https://fonts.cdnfonts.com/css/bebas-neue');
+@import url(https://db.onlinewebfonts.com/c/e552a73b2627d8afebb6bc486014dd9b?family=Adlery+Pro+Swash);
+@font-face {
+    font-family: "Adlery Pro Swash";
+    src: url("https://db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.eot");
+    src: url("https://db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/e552a73b2627d8afebb6bc486014dd9b.svg#Adlery Pro Swash")format("svg");
+  
+}
+
+
+
+
+
+.itemsNav{
+  background-color:rgba(206, 165, 136, 0.54);
+  list-style:none;
+  padding:15px;
+  margin:0;
+  font-family:"Inter";
+  font-size:18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); 
+  align-items:center;
+  margin-bottom:50px;
+  position:fixed;
+  width: 100%;
+
+  
+}
+.itemName{
+  font-family: "Adlery Pro Swash";
+  font-size:47px;
+  margin-left:30px;
+  text-align:left;
+}
+body{
+  margin:0;
+}
+.itemsRightNav{
+  display:flex;
+  justify-content:flex-end; 
+}
+a{
+  text-decoration:none;
+  color:black;
+}
+.itemRightNav{
+  margin-left:30px;
+  margin-right:30px;
+  font-weight:600;
+}
+
+p{
+  text-align: center;
+  justify-content: center;
+  font-size: 20px;
+  font-family: "Nova Round";
+  letter-spacing: 2px;
+}
+
+
+.pngImage{
+  width:350px;
+  object-fit:contain;
+}
+
+
+h2{
+  font-family: "Bebas Neue";
+  font-size: 50px;
+  text-align: center;
+  margin-bottom:0;
+  margin-top:0;
+  
+}
+input[type="submit"]{
+  display: block;
+  margin: 0 auto;
+}
+
+.texto{
+  margin-right:170px;
+  margin-left:170px;
+}
+
+
+
+.cover{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0,0,0,.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20%;
+  box-sizing: border-box;
+}
+
+.postreImagen{
+  width:400px;
+  object-fit:contain;
+}

@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+  	<title>Dessert Maker</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="static/sHome.css">
+    <link href="https://db.onlinewebfonts.com/c/e552a73b2627d8afebb6bc486014dd9b?family=Adlery+Pro+Swash" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Suez+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+  </head>
+  
+  <body>
+    
+    <nav>
+      <ul class="itemsNav">
+        <li class="itemName"><a href="{{ url_for('home') }}">DessertMaker</a></li>
+        <div class="itemsRightNav">
+          <li><a class="itemRightNav" href="{{ url_for('home') }}">INICIO</a></li>
+          <li><a class="itemRightNav" href="{{ url_for('ingredientes') }}">¡BUSCA TU RECETA!</a></li>
+        </div>
+      </ul>
+    </nav>
+
+    
+    <div class="contenedor1">
+      <img id="brownie" class="pngImage" src="{{ url_for('serve_static', filename='images/BROWNIES.png') }}">
+      
+      <div class="textoContenedor1">
+        <div class="sloganContenedor">
+          <p class="slogan sloganTop">Deléitate con la simplicidad,</p>
+          <p class="slogan sloganBotton">postres extraordinarios</p>
+          <p class="slogan sloganBotton">con lo que cuentas.</p>
+        </div>
+        
+        <p class="descripcion">Somos una página web dedicada que te <br>
+          proporcionará los ingredientes de una amplia <br>
+          variedad de recetas, sugeriendote la más <br>
+          adecuada según los ingredientes que poseas.
+        </p>
+      </div>
+
+      <img id="pancake" class="pngImage" src="{{ url_for('serve_static', filename='images/PANCAKES.png') }}">
+    </div>   
+      
+  <div class="contenedor2">
+      <div class="contenedorRectangulo">
+      </div> 
+
+      <div class="contenedorMision"> 
+        <div class="tituloMision">
+          <h2 id="signoIzq"class="intSigno">¿</h2>
+          <h2>CUÁL ES<br> NUESTRA<br> MISIÓN</h2>
+          <h2 id="signoDer"class="intSigno">?</h2>
+        </div>
+
+        
+        <div class="textoMision">
+        
+        <p>En reuniones familiares donde a menudo disfrutamos cocinar nos surgió la disyuntiva de qué postre hacer con los diferentes ingredientes que contamos. ¿Cómo lograrlo sin comprar demasiados ingredientes adicionales y sacándole el máximo provecho a los que tenemos?</p>
+      
+        <p><br>¿Listo? Conoce las más de 20 <br>
+          recetas disponibles.</p>
+
+        </div>
+
+        
+        <div>
+          
+          <form action="/ingredientes">
+            <br>
+            <input type="submit" value="COCINAR AHORA">
+          </form>
+
+
+          
+        </div>
+      </div>
+
+    <div class="contenedorRectangulo">
+    </div> 
+  </div>
+  
+  <div class="contenedor3">
+    <div id="waffles">
+      <img class="pngImage" src="{{ url_for('serve_static', filename='images/WAFFLES.png') }}">
+    </div>
+    
+    <div id="muffins">
+      <img class="pngImage" src="{{ url_for('serve_static', filename='images/MUFFINS.png') }}">
+    </div>
+  </div>
+    
+    
+  </body>
+</html>

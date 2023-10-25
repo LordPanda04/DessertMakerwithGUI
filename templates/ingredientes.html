@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Ingredientes</title>
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    <link rel="stylesheet" type="text/css" href="static/sIngredientes.css">
+    <link href="https://db.onlinewebfonts.com/c/e552a73b2627d8afebb6bc486014dd9b?family=Adlery+Pro+Swash" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/bebas-neue" rel="stylesheet">
+  </head>
+  
+  <body>
+    
+    <nav>
+      <ul class="itemsNav">
+        <li class="itemName"><a href="{{ url_for('home') }}">DessertMaker</a></li>
+        <div class="itemsRightNav">
+          <li><a class="itemRightNav" href="{{ url_for('home') }}">INICIO</a></li>
+          <li><a class="itemRightNav" href="{{ url_for('ingredientes') }}">¡BUSCA TU RECETA!</a></li>
+        </div>
+      </ul>
+    </nav>
+
+    <p class="contenedor1 texto">En DessertMaker actualmente contamos con la siguiente lista de ingredientes:</p>
+
+    <div class="contenedor2">
+      <div class="contenedorGalletas">
+        <img id="GALLETAS" class="pngImage" src="{{ url_for('serve_static', filename='images/GALLETAS.png') }}">
+      </div>
+      
+      <div class="contenedorTabla"> 
+        {{ingredientes_data|safe}}
+      </div>
+
+      <div>
+      </div>
+    </div>
+    
+    <div class="contenedor3 texto">
+      <div class="contenedorAgregarIngredientes">
+        <div class="agregarIngredientes">
+          <div class="tituloIngredientesCuentas">
+            <h2>¿CON QUÉ</h2>
+            <h2>INGREDIENTES</h2>
+            <h2>CUENTAS?</h2>
+          </div>
+
+          <form action="/anadirIngrediente" method="POST">
+            <div class="ingresarCodigo">
+              <label id="code">Ingresar el código del ingrediente:</label>
+              <input type="text" name="codigo" id="codigo">
+            </div>
+              
+            <div class="ingresarCantidad">
+              <label id="cantidad">Ingresar la cantidad del ingrediente:</label>
+              <input type="texto" name="cantidad" id="cantidad">
+            </div>
+            
+            <div class="contenedorBotonAgregar">
+              <input type="submit" value="AGREGAR">
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="contenedorIngredientesAnadidos">
+        <div class="ingredientesAnadidos">
+          <div class="tituloIngredientesAnadidos">
+            <h2 class="ingredientes"> INGREDIENTES</h2>
+            <h2 class="anadidos">AÑADIDOS</h2>
+          </div>
+          
+          <ul class="listaIngredientesAnadidos">
+            {% for ingrediente_cantidad in stockIngrediente_cantidad %}
+              <li>{{ingrediente_cantidad}}</li>
+            {%endfor%}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <form class="contenedor4" action="/postre">
+      <input type="submit" value="MOSTRAR POSTRE">
+    </form>
+    
+  </body>
+</html>
